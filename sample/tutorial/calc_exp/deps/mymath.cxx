@@ -1,19 +1,16 @@
-
-#include "MathFunctions.h"
-
 #include <cmath>
+#include "mymath.h"
 
 #ifdef USE_MYMATH
 #  include "mysqrt.h"
 #endif
 
 namespace mathfunctions {
-double sqrt(double x)
-{
+    double sqrt(double x) {
 #ifdef USE_MYMATH
-  return detail::mysqrt(x);
+        return detail::mysqrt(x);
 #else
-  return std::sqrt(x);
+        return std::sqrt(x);
 #endif
-}
+    }
 }
